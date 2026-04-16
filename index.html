@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buddika Freighters – Japan Vehicle Importers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0a1f5c;
+      --blue: #1a4bdb;
+      --sky: #3a7bd5;
+      --light-blue: #e8f0fe;
+      --accent: #f0a500;
+      --white: #ffffff;
+      --off-white: #f4f7fe;
+      --text: #1a1a2e;
+      --muted: #5a6480;
+      --border: #d0daf8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ─── NAVBAR ─── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 70px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 20px rgba(10, 31, 92, 0.08);
+      transition: all 0.3s;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 22px;
+    }
+
+    .logo-text {
+      line-height: 1.1;
+    }
+
+    .logo-text strong {
+      display: block;
+      font-family: 'Bebas Neue', cursive;
+      font-size: 20px;
+      letter-spacing: 1px;
+      color: var(--navy);
+    }
+
+    .logo-text span {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--sky);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--blue);
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--blue), var(--navy));
+      color: white !important;
+      padding: 9px 22px;
+      border-radius: 50px;
+      font-weight: 600 !important;
+      font-size: 13px !important;
+      transition: transform 0.2s, box-shadow 0.2s !important;
+      box-shadow: 0 4px 15px rgba(26, 75, 219, 0.3);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(26, 75, 219, 0.4) !important;
+    }
+
+    .nav-cta::after {
+      display: none !important;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, var(--navy) 0%, #0e2d80 55%, #1a4bdb 100%);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 100px 5% 60px;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(58, 123, 213, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50px;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.9);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge .dot {
+      width: 8px;
+      height: 8px;
+      background: #4ade80;
+      border-radius: 50%;
+      animation: pulse-green 2s infinite;
+    }
+
+    @keyframes pulse-green {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.6;
+        transform: scale(1.3);
+      }
+    }
+
+    .hero-title {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(52px, 7vw, 90px);
+      line-height: 0.95;
+      color: white;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .hero-title .accent {
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: clamp(15px, 1.8vw, 18px);
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.7;
+      max-width: 480px;
+      margin-bottom: 36px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(240, 165, 0, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(240, 165, 0, 0.5);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      color: white;
+      font-weight: 600;
+      font-size: 15px;
+      padding: 14px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .stat-item {}
+
+    .stat-num {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 42px;
+      color: white;
+      line-height: 1;
+    }
+
+    .stat-num span {
+      color: var(--accent);
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .car-showcase {
+      position: relative;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      padding: 30px;
+      backdrop-filter: blur(10px);
+    }
+
+    .car-img-placeholder {
+      width: 100%;
+      aspect-ratio: 16/10;
+      background: linear-gradient(135deg, rgba(26, 75, 219, 0.3), rgba(10, 31, 92, 0.5));
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .car-img-placeholder::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40%;
+      background: linear-gradient(to top, rgba(10, 31, 92, 0.6), transparent);
+    }
+
+    .car-label {
+      margin-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .car-label-text {
+      color: white;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .car-label-badge {
+      background: rgba(74, 222, 128, 0.2);
+      border: 1px solid rgba(74, 222, 128, 0.4);
+      color: #4ade80;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 50px;
+    }
+
+    .floating-tag {
+      position: absolute;
+      background: white;
+      border-radius: 14px;
+      padding: 10px 16px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .floating-tag.tl {
+      top: -16px;
+      left: -20px;
+      animation: float1 3s ease-in-out infinite;
+    }
+
+    .floating-tag.br {
+      bottom: -16px;
+      right: -20px;
+      animation: float2 3s ease-in-out infinite;
+    }
+
+    .floating-tag .icon {
+      font-size: 18px;
+    }
+
+    @keyframes float1 {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    @keyframes float2 {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(8px);
+      }
+    }
+
+    /* ─── SECTION COMMON ─── */
+    section {
+      padding: 90px 5%;
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: var(--light-blue);
+      padding: 5px 14px;
+      border-radius: 50px;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1;
+      letter-spacing: 1px;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 560px;
+    }
+
+    .section-header {
+      margin-bottom: 56px;
+    }
+
+    /* ─── WHY US ─── */
+    #why {
+      background: var(--off-white);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .why-card {
+      background: white;
+      border-radius: 20px;
+      padding: 32px;
+      border: 1px solid var(--border);
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--blue), var(--sky));
+      transform: scaleX(0);
+      transition: transform 0.3s;
+      transform-origin: left;
+    }
+
+    .why-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(26, 75, 219, 0.12);
+    }
+
+    .why-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .why-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--light-blue);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .why-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .why-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ─── HOW IT WORKS ─── */
+    #process {
+      background: white;
+    }
+
+    .steps-wrap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0;
+      position: relative;
+    }
+
+    .steps-wrap::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), var(--sky));
+      z-index: 0;
+    }
+
+    .step {
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-num {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, var(--blue), var(--navy));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-family: 'Bebas Neue', cursive;
+      font-size: 30px;
+      color: white;
+      box-shadow: 0 8px 24px rgba(26, 75, 219, 0.3);
+      border: 4px solid white;
+    }
+
+    .step h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ─── TIKTOK / VIDEOS ─── */
+    #videos {
+      background: var(--navy);
+    }
+
+    #videos .section-title {
+      color: white;
+    }
+
+    #videos .section-tag {
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    #videos .section-sub {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .tiktok-notice {
+      padding: 32px;
+      text-align: center;
+    }
+
+    .tiktok-notice p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 20px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .tiktok-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .tiktok-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .video-card {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      aspect-ratio: 9/16;
+      max-height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-card:hover {
+      transform: scale(1.03);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .video-card .play-btn {
+      width: 52px;
+      height: 52px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 12px;
+      transition: background 0.2s;
+    }
+
+    .video-card:hover .play-btn {
+      background: var(--blue);
+    }
+
+    .video-card span {
+      font-size: 12px;
+      opacity: 0.7;
+    }
+
+    .tiktok-icon {
+      font-size: 40px;
+      margin-bottom: 8px;
+    }
+
+    /* ─── SERVICES ─── */
+    #services {
+      background: var(--off-white);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 20px;
+      padding: 36px;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(26, 75, 219, 0.1);
+      border-color: var(--blue);
+    }
+
+    .service-num {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 13px;
+      letter-spacing: 3px;
+      color: var(--sky);
+    }
+
+    .service-icon {
+      font-size: 40px;
+    }
+
+    .service-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .service-tag {
+      display: inline-block;
+      background: var(--light-blue);
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 50px;
+      align-self: flex-start;
+    }
+
+    /* ─── TRUST BANNER ─── */
+    #trust {
+      background: linear-gradient(135deg, var(--blue), var(--navy));
+      padding: 70px 5%;
+    }
+
+    .trust-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .trust-title {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(36px, 5vw, 60px);
+      color: white;
+      line-height: 1;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .trust-title span {
+      color: var(--accent);
+    }
+
+    .trust-desc {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .trust-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .trust-stat {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .trust-stat-num {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 48px;
+      color: white;
+      line-height: 1;
+    }
+
+    .trust-stat-num span {
+      color: var(--accent);
+    }
+
+    .trust-stat-label {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 4px;
+    }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      background: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-info h3 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 36px;
+      color: var(--navy);
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .contact-info p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px;
+      background: var(--off-white);
+      border-radius: 14px;
+      margin-bottom: 12px;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.2s;
+      border: 1px solid var(--border);
+    }
+
+    .contact-item:hover {
+      background: var(--light-blue);
+      border-color: var(--blue);
+      transform: translateX(4px);
+    }
+
+    .contact-item .ci-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--blue), var(--navy));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+      color: white;
+    }
+
+    .contact-item .ci-text {}
+
+    .contact-item .ci-label {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .contact-item .ci-val {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .contact-form {
+      background: var(--off-white);
+      border-radius: 24px;
+      padding: 40px;
+      border: 1px solid var(--border);
+    }
+
+    .contact-form h3 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 28px;
+      color: var(--navy);
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      background: white;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(26, 75, 219, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--blue), var(--navy));
+      color: white;
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 4px 15px rgba(26, 75, 219, 0.3);
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(26, 75, 219, 0.4);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--navy);
+      padding: 60px 5% 30px;
+    }
+
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 30px;
+    }
+
+    .footer-brand .logo-text strong {
+      color: white;
+    }
+
+    .footer-brand .logo-text span {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.7;
+      margin-top: 16px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .social-link:hover {
+      background: var(--blue);
+      transform: translateY(-3px);
+    }
+
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col a {
+      text-decoration: none;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom p {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* ─── FLOATING CALL BTN ─── */
+    .float-call {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #22c55e, #15803d);
+      color: white;
+      padding: 14px 22px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      box-shadow: 0 8px 30px rgba(34, 197, 94, 0.4);
+      transition: all 0.3s;
+      animation: call-pulse 3s ease-in-out infinite;
+    }
+
+    .float-call:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 40px rgba(34, 197, 94, 0.5);
+      animation: none;
+    }
+
+    .float-call .call-icon {
+      font-size: 20px;
+      animation: ring 2s ease-in-out infinite;
+    }
+
+    @keyframes ring {
+
+      0%,
+      100% {
+        transform: rotate(0);
+      }
+
+      10% {
+        transform: rotate(15deg);
+      }
+
+      20% {
+        transform: rotate(-15deg);
+      }
+
+      30% {
+        transform: rotate(10deg);
+      }
+
+      40% {
+        transform: rotate(-5deg);
+      }
+
+      50% {
+        transform: rotate(0);
+      }
+    }
+
+    @keyframes call-pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 8px 30px rgba(34, 197, 94, 0.4);
+      }
+
+      50% {
+        box-shadow: 0 8px 40px rgba(34, 197, 94, 0.7), 0 0 0 8px rgba(34, 197, 94, 0.1);
+      }
+    }
+
+    /* ─── MOBILE MENU ─── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 20px 5%;
+      z-index: 999;
+      flex-direction: column;
+      gap: 4px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 12px 16px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      border-radius: 10px;
+      transition: background 0.2s;
+    }
+
+    .mobile-menu a:hover {
+      background: var(--light-blue);
+      color: var(--blue);
+    }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        display: none;
+      }
+
+      .trust-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .steps-wrap::before {
+        display: none;
+      }
+
+      .steps-wrap {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hero-stats {
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .steps-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .float-call .call-text {
+        display: none;
+      }
+
+      .float-call {
+        padding: 16px;
+        border-radius: 50%;
+      }
+
+      .float-call .call-icon {
+        font-size: 24px;
+      }
+
+      section {
+        padding: 70px 5%;
+      }
+    }
+
+    /* ----------- */
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 14px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .video-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #111;
+      aspect-ratio: 9 / 16;
+      cursor: pointer;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: block;
+    }
+
+    /* ── Thumbnail ── */
+    .video-card .thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── Emoji placeholder (remove when you use real thumbnails) ── */
+    .video-card .thumb-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+    }
+
+    /* ── TikTok badge top-right ── */
+    .video-card .tiktok-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(0, 0, 0, 0.55);
+      border-radius: 5px;
+      padding: 3px 7px;
+      font-size: 11px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .video-card .tiktok-badge svg {
+      width: 12px;
+      height: 12px;
+      fill: #fff;
+      flex-shrink: 0;
+    }
+
+    /* ── Bottom gradient info ── */
+    .video-card .bottom-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 28px 8px 8px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+    }
+
+    .video-card .video-title {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.9);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: 500;
+    }
+
+    .video-card .video-views {
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.55);
+      margin-top: 2px;
+    }
+
+    /* ── Hover overlay ── */
+    .video-card .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.42);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      opacity: 0;
+      transition: opacity 0.22s ease;
+    }
+
+    .video-card:hover .overlay {
+      opacity: 1;
+    }
+
+    .video-card:hover .play-btn {
+      transform: scale(1.1);
+    }
+
+    .video-card .play-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.22s ease;
+    }
+
+    .video-card .play-btn svg {
+      margin-left: 4px;
+    }
+
+    .video-card .watch-label {
+      font-size: 12px;
+      color: #fff;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <a href="#hero" class="logo">
+      <div class="logo-icon">
+        <img src="logo.png" alt="Buddika Freighters Logo" style="height: 50px; width: auto; object-fit: contain;">
+      </div>
+      <div class="logo-text">
+        <strong>BUDDIKA FREIGHTERS</strong>
+        <span>Japan Vehicle Importers</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#why" onclick="closeMobile()">Why Us</a>
+    <a href="#process" onclick="closeMobile()">Process</a>
+    <a href="#services" onclick="closeMobile()">Services</a>
+    <a href="#videos" onclick="closeMobile()">Videos</a>
+    <a href="#contact" onclick="closeMobile()">Get a Quote</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Trusted Since 2014 · 10+ Years Experience
+        </div>
+        <h1 class="hero-title">
+          IMPORT YOUR<br>
+          DREAM CAR<br>
+          FROM <span class="accent">JAPAN</span>
+        </h1>
+        <p class="hero-sub">
+          Sri Lanka's most trusted Japan vehicle importer. We beat prices at Japan's top auctions and deliver straight
+          to your doorstep — below market price, every time.
+        </p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-primary">🚗 Get a Free Quote</a>
+          <a href="https://wa.me/94722714507" target="_blank" class="btn-outline">💬 WhatsApp Us</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">2K<span>+</span></div>
+            <div class="stat-label">Happy Customers</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">10<span>+</span></div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">100<span>%</span></div>
+            <div class="stat-label">Customs Cleared</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="car-showcase">
+          <div class="floating-tag tl"><span class="icon">🏆</span> Japan Auction Winners</div>
+          <div class="car-img-placeholder">🚙</div>
+          <div class="car-label">
+            <span class="car-label-text">Direct from Japan Auctions</span>
+            <span class="car-label-badge">✅ Verified</span>
+          </div>
+          <div class="floating-tag br"><span class="icon">💰</span> Below Market Price</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-tag">Why Choose Us</span>
+        <h2 class="section-title">THE BUDDIKA<br>FREIGHTERS</h2>
+        <p class="section-sub">We don't just import vehicles — we deliver trust, transparency, and the best possible
+          price for every customer.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card reveal">
+          <div class="why-icon">🏅</div>
+          <h3>10+ Years of Expertise</h3>
+          <p>Over a decade of experience in Japan vehicle imports means we know exactly how to get you the best vehicle
+            at the best price, hassle-free.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">💰</div>
+          <h3>Below Market Prices</h3>
+          <p>We bid directly at Japan's top auctions. No middlemen, no markups. Our customers consistently pay less than
+            market value for premium vehicles.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">👥</div>
+          <h3>2,000+ Satisfied Customers</h3>
+          <p>Our track record speaks for itself. Over 2,000 happy customers across Sri Lanka have trusted us to deliver
+            their dream vehicles.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">📋</div>
+          <h3>Full Customs Clearance</h3>
+          <p>We handle every aspect of customs documentation and clearance. You don't have to worry about a single paper
+            — we've got it all covered.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">🚗</div>
+          <h3>Easy Vehicle Registration</h3>
+          <p>Our team assists with the entire registration process, from import clearance to number plate issuance,
+            making it quick and stress-free for you.</p>
+        </div>
+        <div class="why-card reveal">
+          <div class="why-icon">📞</div>
+          <h3>Dedicated Support</h3>
+          <p>From the first inquiry to final delivery, our team is always reachable. Real people, real answers, every
+            step of the way.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="process">
+    <div class="section-inner">
+      <div class="section-header reveal" style="text-align:center;">
+        <span class="section-tag">Simple Process</span>
+        <h2 class="section-title">HOW IT WORKS</h2>
+        <p class="section-sub" style="margin:0 auto;">Getting your dream car from Japan is easier than you think. Here's
+          our streamlined 5-step process.</p>
+      </div>
+      <div class="steps-wrap">
+        <div class="step reveal">
+          <div class="step-num">01</div>
+          <h3>Consultation</h3>
+          <p>Tell us your budget and preferred vehicle. We guide you on the best options available in Japan.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">02</div>
+          <h3>Auction Bidding</h3>
+          <p>We attend Japan auctions on your behalf and bid competitively to secure your vehicle below market value.
+          </p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">03</div>
+          <h3>Purchase & Inspection</h3>
+          <p>Once secured, we conduct a thorough inspection and provide you with the official auction grade report.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">04</div>
+          <h3>Shipping</h3>
+          <p>Your vehicle is safely loaded and shipped to Colombo Port. We keep you updated throughout the journey.</p>
+        </div>
+        <div class="step reveal">
+          <div class="step-num">05</div>
+          <h3>Customs & Delivery</h3>
+          <p>We clear all customs, pay all duties, and deliver your car to your doorstep, fully registered.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIKTOK VIDEOS -->
+  <section id="videos">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-tag">Our Videos</span>
+        <h2 class="section-title">WATCH OUR<br>CLEARING VIDEOS</h2>
+        <p class="section-sub">See real vehicles being cleared by our team. Follow us on TikTok for live updates from
+          Japan auctions and Hambanthota Port.</p>
+      </div>
+
+      <div class="tiktok-notice reveal">
+        <a href="https://www.tiktok.com/@scajayawardana" target="_blank" class="tiktok-link">
+          ▶ &nbsp;Watch Our TikTok Channel
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-tag">What We Offer</span>
+        <h2 class="section-title">OUR SERVICES</h2>
+        <p class="section-sub">From finding your vehicle to final delivery — we handle it all under one roof.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-num">01</div>
+          <div class="service-icon">🚗</div>
+          <h3>Japan Vehicle Import</h3>
+          <p>We source and bid on vehicles directly from Japan's top auction houses including USS, TAA, JU, and more —
+            securing the best prices for our clients.</p>
+          <span class="service-tag">Most Popular</span>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-num">02</div>
+          <div class="service-icon">📋</div>
+          <h3>Customs Clearance</h3>
+          <p>Full end-to-end customs documentation and clearance at Colombo Port. We handle all duties, permits, and
+            paperwork so you don't have to.</p>
+          <span class="service-tag">Full Service</span>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-num">03</div>
+          <div class="service-icon">🚌</div>
+          <h3>Bus & Van Imports</h3>
+          <p>Need a commercial vehicle? We import buses, vans, and light trucks from Japan for businesses and transport
+            operators at the best rates.</p>
+          <span class="service-tag">Commercial</span>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-num">04</div>
+          <div class="service-icon">🚐</div>
+          <h3>Door-to-Door Delivery</h3>
+          <p>Once cleared, your vehicle is delivered directly to your address anywhere in Sri Lanka. Safe, insured, and
+            on time.</p>
+          <span class="service-tag">Convenience</span>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-num">05</div>
+          <div class="service-icon">🚗</div>
+          <h3>Vehicle Registration</h3>
+          <p>Our team assists with the entire registration process, from import clearance to number plate issuance, making it quick and stress-free for you.</p>
+          <span class="service-tag">Transparency</span>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-num">06</div>
+          <div class="service-icon">💬</div>
+          <h3>Consultation & Advice</h3>
+          <p>Not sure which vehicle suits your budget? Our experts provide free consultations to help you choose the
+            right vehicle for your needs.</p>
+          <span class="service-tag">Free</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BANNER -->
+  <div id="trust">
+    <div class="trust-inner">
+      <div class="reveal">
+        <h2 class="trust-title">SRI LANKA'S MOST<br><span>TRUSTED</span> VEHICLE<br>IMPORTER</h2>
+        <p class="trust-desc">For over 10 years, families and businesses across Sri Lanka have trusted Buddika
+          Freighters to import their vehicles safely, legally, and at the best possible price.</p>
+        <a href="https://wa.me/94722714507" target="_blank" class="btn-primary">💬 Talk to Us on WhatsApp</a>
+      </div>
+      <div class="trust-stats reveal">
+        <div class="trust-stat">
+          <div class="trust-stat-num">2K<span>+</span></div>
+          <div class="trust-stat-label">Vehicles Imported</div>
+        </div>
+        <div class="trust-stat">
+          <div class="trust-stat-num">10<span>+</span></div>
+          <div class="trust-stat-label">Years in Business</div>
+        </div>
+        <div class="trust-stat">
+          <div class="trust-stat-num">100<span>%</span></div>
+          <div class="trust-stat-label">Customs Success Rate</div>
+        </div>
+        <div class="trust-stat">
+          <div class="trust-stat-num">50<span>+</span></div>
+          <div class="trust-stat-label">Japan Auctions Accessed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">LET'S FIND YOUR<br>DREAM CAR</h2>
+        <p class="section-sub">Ready to import? Fill in the form or contact us directly — we'll get back to you within
+          24 hours.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h3>REACH US DIRECTLY</h3>
+          <p>We're available 7 days a week to answer your questions and help you find the perfect vehicle from Japan.
+          </p>
+
+          <a href="tel:0778356537" class="contact-item">
+            <div class="ci-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l1.42-1.42a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </div>
+            <div class="ci-text">
+              <div class="ci-label">Phone / Hotline</div>
+              <div class="ci-val">0778-356-537</div>
+            </div>
+          </a>
+          <a href="https://wa.me/94722714507" target="_blank" class="contact-item">
+            <div class="ci-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.126.556 4.103 1.523 5.826L.057 23.428a.5.5 0 0 0 .61.61l5.549-1.475A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.52-5.16-1.426l-.36-.214-3.938 1.046 1.053-3.848-.232-.374A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+              </svg>
+            </div>
+            <div class="ci-text">
+              <div class="ci-label">WhatsApp</div>
+              <div class="ci-val">+94 72 271 4507</div>
+            </div>
+          </a>
+          <a href="https://www.facebook.com/share/18Y9E3t7WN/" target="_blank" class="contact-item">
+            <div class="ci-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z" />
+              </svg>
+            </div>
+            <div class="ci-text">
+              <div class="ci-label">Facebook Page</div>
+              <div class="ci-val">Buddika Freighters</div>
+            </div>
+          </a>
+          <a href="https://www.tiktok.com/@scajayawardana" target="_blank" class="contact-item">
+            <div class="ci-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z" />
+              </svg>
+            </div>
+            <div class="ci-text">
+              <div class="ci-label">TikTok</div>
+              <div class="ci-val">@scajayawardana</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="contact-form reveal">
+          <h3>SEND AN INQUIRY</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" id="customerName" placeholder="Saman Perera">
+            </div>
+            <div class="form-group">
+              <label>Mobile Number</label>
+              <input type="tel" id="customerPhone" placeholder="07X XXX XXXX">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Dream Car</label>
+            <input type="text" id="dreamCar" placeholder="e.g. Vezel, Wagon R, Prado...">
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea id="customerMessage"
+              placeholder="Tell us more — year, color, budget, any other preferences..."></textarea>
+          </div>
+          <button class="submit-btn" onclick="sendWhatsApp()">🚗 Send My Inquiry</button>
+        </div>
+
+        <script>
+          function sendWhatsApp() {
+            const name = document.getElementById('customerName').value.trim();
+            const phone = document.getElementById('customerPhone').value.trim();
+            const dreamCar = document.getElementById('dreamCar').value.trim();
+            const message = document.getElementById('customerMessage').value.trim();
+
+            if (!name) { alert('Please enter your name.'); return; }
+            if (!phone) { alert('Please enter your mobile number.'); return; }
+            if (!dreamCar) { alert('Please enter your dream car.'); return; }
+            if (!message) { alert('Please enter a description.'); return; }
+
+            const text =
+              `🚗 *New Vehicle Inquiry*
+
+👤 *Name:* ${name}
+📞 *Mobile:* ${phone}
+🚙 *Dream Car:* ${dreamCar}
+📝 *Description:* ${message}`;
+
+            const url = `https://wa.me/94722714507?text=${encodeURIComponent(text)}`;
+            window.open(url, '_blank');
+          }
+        </script>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#hero" class="logo">
+          <div class="logo-icon">
+            <img src="logo.png" alt="Buddika Freighters Logo" style="height: 50px; width: auto; object-fit: contain;">
+          </div>
+          <div class="logo-text">
+            <strong>BUDDIKA FREIGHTERS</strong>
+            <span>Japan Vehicle Importers & Custom Clearance</span>
+          </div>
+        </a>
+        <p>Sri Lanka's trusted Japan vehicle importer since 2014. We source directly from Japan's top auctions and
+          deliver below market price to your door — with full customs clearance handled end-to-end.</p>
+        <div class="social-links">
+          <a href="https://www.tiktok.com/@scajayawardana" target="_blank" class="social-link" title="TikTok">
+            <div class="ci-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z" />
+              </svg>
+            </div>
+          </a>
+          <a href="https://www.facebook.com/share/18Y9E3t7WN/" target="_blank" class="social-link" title="Facebook">
+            <div class="ci-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z" />
+              </svg>
+            </div>
+          </a>
+          <a href="https://wa.me/94722714507" target="_blank" class="social-link" title="WhatsApp">
+            <div class="ci-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.126.556 4.103 1.523 5.826L.057 23.428a.5.5 0 0 0 .61.61l5.549-1.475A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.52-5.16-1.426l-.36-.214-3.938 1.046 1.053-3.848-.232-.374A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+              </svg>
+            </div>
+          </a>
+          <a href="tel:0778356537" class="social-link" title="Call Us">
+            <div class="ci-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l1.42-1.42a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#process">Our Process</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="#contact">Get a Quote</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:0778356537">📞 0778-356-537</a></li>
+          <li><a href="https://wa.me/94722714507" target="_blank">💬 WhatsApp Us</a></li>
+          <li><a href="https://www.facebook.com/share/18Y9E3t7WN/" target="_blank">📘 Facebook Page</a></li>
+          <li><a href="https://www.tiktok.com/@scajayawardana" target="_blank">🎬 TikTok Videos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Buddika Freighters. All rights reserved. Sri Lanka's Trusted Japan Vehicle Importer.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING CALL BUTTON -->
+  <a href="tel:0778356537" class="float-call">
+    <span class="call-icon">📞</span>
+    <span class="call-text">0778-356-537</span>
+  </a>
+
+  <script>
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+    function closeMobile() {
+      mobileMenu.classList.remove('open');
+    }
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove('open');
+      }
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.style.boxShadow = '0 4px 30px rgba(10,31,92,0.15)';
+      } else {
+        nav.style.boxShadow = '0 2px 20px rgba(10,31,92,0.08)';
+      }
+    });
+
+    // Form submit
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target;
+      btn.textContent = '✅ Inquiry Sent! We\'ll contact you soon.';
+      btn.style.background = 'linear-gradient(135deg, #22c55e, #15803d)';
+      setTimeout(() => {
+        btn.textContent = '🚗 Send My Inquiry';
+        btn.style.background = '';
+      }, 4000);
+    }
+  </script>
+</body>
+
+</html>
