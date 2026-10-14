@@ -130,6 +130,30 @@
       width: 100%;
     }
 
+    /* Customs clearance chips */
+.hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.hero-chip {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 50px;
+}
+
+/* New floating tag, middle right of the car card */
+.floating-tag.mr {
+  top: 38%;
+  right: -36px;
+  animation: float2 3.5s ease-in-out infinite;
+}
     .nav-cta {
       background: linear-gradient(135deg, var(--blue), var(--navy));
       color: white !important;
@@ -1686,6 +1710,7 @@
     <a href="#process" onclick="closeMobile()">Process</a>
     <a href="#services" onclick="closeMobile()">Services</a>
     <a href="#videos" onclick="closeMobile()">Videos</a>
+    <a href="#gallery" onclick="closeMobile()">Gallery</a>
     <a href="#contact" onclick="closeMobile()">Get a Quote</a>
   </div>
 
@@ -1704,13 +1729,20 @@
           FROM <span class="accent">JAPAN</span>
         </h1>
         <p class="hero-sub">
-          Sri Lanka's most trusted Japan vehicle importer. We beat prices at Japan's top auctions and deliver straight
-          to your doorstep — below market price, every time.
+          Sri Lanka's most trusted Japan vehicle importer. We beat prices at Japan's top auctions, handle full
+          customs clearance, and deliver straight to your doorstep — below market price, every time.
         </p>
         <div class="hero-btns">
           <a href="#contact" class="btn-primary">🚗 Get a Free Quote</a>
           <a href="https://wa.me/94722714507" target="_blank" class="btn-outline">💬 WhatsApp Us</a>
         </div>
+
+        <div class="hero-chips">
+          <span class="hero-chip">🏆 Auction Import</span>
+          <span class="hero-chip">📋 Customs Clearance</span>
+          <span class="hero-chip">🚐 Door-to-Door Delivery</span>
+        </div>
+
         <div class="hero-stats">
           <div class="stat-item">
             <div class="stat-num">10K<span>+</span></div>
@@ -1729,6 +1761,7 @@
       <div class="hero-visual">
         <div class="car-showcase">
           <div class="floating-tag tl"><span class="icon">🏆</span> Japan Auction Winners</div>
+          <div class="floating-tag mr"><span class="icon">📋</span> Customs Clearance</div>
           <div class="car-img-placeholder">🚙</div>
           <div class="car-label">
             <span class="car-label-text">Direct from Japan Auctions</span>
