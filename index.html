@@ -876,7 +876,7 @@
       display: grid;
       grid-template-columns: 1fr 1.2fr;
       gap: 60px;
-      align-items: start;
+      align-items: stretch;
     }
 
     .contact-info h3 {
@@ -946,6 +946,30 @@
       border-radius: 24px;
       padding: 40px;
       border: 1px solid var(--border);
+    }
+
+    .contact-grid {
+      align-items: stretch;
+      /* if you have align-items: start here, change it */
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-form .form-group:has(textarea) {
+      flex: 1;
+      /* message group takes the leftover space */
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-form textarea {
+      flex: 1;
+      min-height: 160px;
+      /* never shorter than this */
+      resize: vertical;
     }
 
     .contact-form h3 {
@@ -1626,19 +1650,24 @@
     </div>
   </section>
 
-  <!-- TIKTOK VIDEOS -->
+  <!-- VIDEOS (TIKTOK + YOUTUBE) -->
   <section id="videos">
     <div class="section-inner">
       <div class="section-header reveal">
         <span class="section-tag">Our Videos</span>
         <h2 class="section-title">WATCH OUR<br>CLEARING VIDEOS</h2>
-        <p class="section-sub">See real vehicles being cleared by our team. Follow us on TikTok for live updates from
-          Japan auctions and Hambanthota Port.</p>
+        <p class="section-sub">See real vehicles being cleared by our team. Follow us on TikTok and YouTube for live
+          updates from Japan auctions and Hambantota Port.</p>
       </div>
 
-      <div class="tiktok-notice reveal">
-        <a href="https://www.tiktok.com/@buddikafreighters" target="_blank" class="tiktok-link">
+      <div class="video-links reveal">
+        <a href="https://www.tiktok.com/@buddikafreighters" target="_blank" rel="noopener" class="tiktok-link">
           ▶ &nbsp;Watch Our TikTok Channel
+        </a>
+      </div><br>
+      <div class="video-links reveal">
+        <a href="https://youtube.com/@buddikafreighters" target="_blank" rel="noopener" class="tiktok-link">
+          ▶ &nbsp;Watch Our YouTube Channel
         </a>
       </div>
     </div>
@@ -1689,7 +1718,8 @@
           <div class="service-num">05</div>
           <div class="service-icon">🚗</div>
           <h3>Vehicle Registration</h3>
-          <p>Our team assists with the entire registration process, from import clearance to number plate issuance, making it quick and stress-free for you.</p>
+          <p>Our team assists with the entire registration process, from import clearance to number plate issuance,
+            making it quick and stress-free for you.</p>
           <span class="service-tag">Transparency</span>
         </div>
         <div class="service-card reveal">
@@ -1798,6 +1828,18 @@
               <div class="ci-val">@buddikafreighters</div>
             </div>
           </a>
+          <a href="https://youtube.com/@buddikafreighters" target="_blank" rel="noopener" class="contact-item">
+            <div class="ci-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </div>
+            <div class="ci-text">
+              <div class="ci-label">YouTube</div>
+              <div class="ci-val">@buddikafreighters</div>
+            </div>
+          </a>
         </div>
 
         <div class="contact-form reveal">
@@ -1876,6 +1918,15 @@
               </svg>
             </div>
           </a>
+          <a href="https://youtube.com/@buddikafreighters" target="_blank" rel="noopener" class="social-link"
+            title="YouTube">
+            <div class="ci-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </div>
+          </a>
           <a href="https://www.facebook.com/share/18Y9E3t7WN/" target="_blank" class="social-link" title="Facebook">
             <div class="ci-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -1920,6 +1971,8 @@
           <li><a href="https://wa.me/94722714507" target="_blank">💬 WhatsApp Us</a></li>
           <li><a href="https://www.facebook.com/share/18Y9E3t7WN/" target="_blank">📘 Facebook Page</a></li>
           <li><a href="https://www.tiktok.com/@buddikafreighters" target="_blank">🎬 TikTok Videos</a></li>
+          <li><a href="https://youtube.com/@buddikafreighters" target="_blank">🎬 YouTube Chennel</a></li>
+
         </ul>
       </div>
     </div>
